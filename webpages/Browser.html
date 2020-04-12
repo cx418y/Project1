@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+    <title>Browser</title>
+    <link href="../css/reset.css" rel="stylesheet" type="text/css">
+    <link href="../css/header.css" rel="stylesheet" type="text/css">
+    <link href="../css/Browser.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav id="top">
+    <img src="../images/logo4.jpg" wide="60" height="50" class="logo">
+    <div class="nav-left">
+        <table>
+            <tr>
+                <td><a href="Home.html">Home</a></td>
+                <td  class="current_webpage">Browser</td>
+                <td><a href="Search.html">Search</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="dropdown">
+        <button class="account">My account</button>
+        <div class="dropdown-content">
+            <a href="upload.html">Upload</a>
+            <a href="my_photo.html">My photo</a>
+            <a href="favor.html">My favor</a>
+            <a href="../index.html">Login in</a>
+        </div>
+    </div>
+</nav>
+<aside>
+    <div class="search-by-title">
+        <div class="title1">Search by Title </div>
+        <input type="text" class="search-text" name="search-text">
+        <button class="search-button" onclick="alert('已显示搜索结果')">Search</button>
+    </div>
+    <div class="hot">
+        <table>
+            <tr>
+                <th>Hot Content</th>
+            </tr>
+            <tr><td><a onclick="alert('已选择')">Scenery</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Wonder</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">People</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Animal</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Building</a></td></tr>
+        </table>
+    </div>
+    <div class="hot">
+        <table>
+            <tr>
+                <th>Hot Countries</th>
+            </tr>
+            <tr><td><a onclick="alert('已选择')">China</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Italy</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Japan</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">American</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Thailand</a></td></tr>
+        </table>
+    </div>
+    <div class="hot">
+        <table>
+            <tr>
+                <th>Hot Cities</th>
+            </tr>
+            <tr><td><a onclick="alert('已选择')">Shanghai</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Beijing</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Tokyo</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Bangkok</a></td></tr>
+            <tr><td><a onclick="alert('已选择')">Roma</a></td></tr>
+        </table>
+    </div>
+</aside>
+<section>
+    <header>Filter</header>
+    <div class="filter">
+        <select  class="content" name="content" placeholder="Filter by Content">
+            <option value="Scenery">Scenery</option>
+            <option value="Wonder">Wonder</option>
+            <option value="People" >People</option>
+            <option value="Animal">Animal</option>
+            <option value="Building">Building</option>
+            <option value="others">others</option>
+        </select>
+        <select id="s1"></select>
+        <select id="s2"></select>
+        <script>
+            var city = {'Filter by Country': ['Filter by City'],
+                China: ['Shanghai','Kunming','Beijing','Yantai'],
+                Japan: ['Tokyo', 'Osaka', 'Kamakura'],
+                Italy: ['Roma','Milan','Venice','Florence'],
+                America: ['New York','San Francisco', 'Washington']};
+
+            window.onload = function() {
+                var select1 = document.getElementById("s1");
+                var select2 = document.getElementById("s2");
+
+              //*初始化国家下拉框
+                for (let i in city) {
+                    select1.add(new Option(i, i), null);
+                }
+                //*初始化城市下拉框
+                select2.add(new Option(city[select1.value][0], city[select1.value][0]), null);
+
+               //*给国家下拉框添加事件
+                select1.addEventListener("change", function(){
+                    select2.length = 0; //每次都先清空一下城市菜单
+                    for (let i in city[select1.value]) {
+                        select2.add(new Option(city[select1.value][i], city[select1.value][i]), null);
+                    }
+                });
+            }
+        </script>
+        <button class="filter-button" onclick="alert('已显示搜索结果')">Filter</button>
+    </div>
+    <div class="photo">
+        <a href="details.html"><img src="../images/normal/medium/6119127716.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/6114859969.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/5856697109.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/6114907897.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/6596048341.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/8646991554.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/8645912379.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/8710513053.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9498368556.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9502740177.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9494470337.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9494282329.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9496560520.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9505536014.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9494464567.jpg"></a>
+        <a href="details.html"><img src="../images/normal/medium/9496787858.jpg"></a>
+        <div class="page"><< <span class="current-page">1</span> 2 3 4 5 6 ... 9 >></div>
+    </div>
+
+</section>
+<footer>
+    Copyright © 2019-2021 Web fundamental. All Rights Reserved. 备案号：19302010084
+</footer>
+</body>
+</html>
